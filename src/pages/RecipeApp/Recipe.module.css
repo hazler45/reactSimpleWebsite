@@ -8,10 +8,48 @@
   .categoriesWrapper{
     display: flex;
    padding: 20px 0;
-
+    gap: 8px;
+  }
+  .categoriesWrapper :hover{
+    background-color: rgb(185, 6, 6);
+    color: white;
+    
   }
   .categoryItem{
     margin: auto;
     border: 2px solid black;
     padding: 4px 8px;
+  
   }
+   
+  .selectedCategory {
+    background-color: rgb(185, 6, 6);
+    color: white;
+    
+  }
+  .recipeDetailWrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px; 
+    margin: auto;
+    align-items: center;
+    
+  }
+  .imgDetail{
+    width: 20px;
+    height: auto;
+    border-radius: 24px;
+  }
+ .ingredientWrapper{
+  display: grid;
+  gap: 10px;
+ }
+ .ingredientMeasureWrapper{
+  gap: 40px;
+  margin-top: 2rem;
+  justify-content: center;
+  display: flex;
+ }
+ .searchFiled{
+  
+ }
