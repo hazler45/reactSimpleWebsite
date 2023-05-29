@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import RecipeCards from "../../components/cards/recipeCard";
 import styles from "./Recipe.module.css";
 import {
-  getAllRecipesByCategories,
-  getAllRecipesByCategory,
+  getAllRecipesCategories,
+  // getAllRecipesByCategory,
   getMealBySearchTerm
 } from "../../apis/recipe";
 import { Link } from "react-router-dom";
@@ -14,24 +14,25 @@ export default function Recipes() {
   const [categories, setCategories] = React.useState([]);
   const [selectedCategory, setSelectedCategory] = React.useState("Chicken");
   const [meals, setMeals] = React.useState([]);
+  
   useEffect(() => {
     getRecipesByCategories();
   }, []);
-  useEffect(() => {
-    getMealsByCategory();
-  }, [selectedCategory]);
+
+  // useEffect(() => {
+  //   getMealsByCategory();
+  // }, [selectedCategory]);
 
   const getRecipesByCategories = () => {
-    getAllRecipesByCategories().then((res) => {
+    getAllRecipesCategories().then((res) => {
       setCategories(res);
     });
   };
-  const getMealsByCategory = () => {
-    getAllRecipesByCategory(selectedCategory).then((res) => {
-      setMeals(res);
-    });
-  };
- 
+  // const getMealsByCategory = () => {
+  //   getAllRecipesByCategory(selectedCategory).then((res) => {
+  //     setMeals(res);
+  //   });
+  // };
   const filterByName=(name)=>{
     getMealBySearchTerm(name).then((res) => {
       setMeals(res);
@@ -50,8 +51,10 @@ export default function Recipes() {
       />
       {/* button of the food menu */}
       <div className={styles.categoriesWrapper}>
+        {/* <Swiper> */}
         {categories?.length > 0 &&
           categories.map((category) => (
+            // <SwiperSlide>
             <div
               onClick={() => {
                 setSelectedCategory(category.strCategory);
@@ -63,9 +66,12 @@ export default function Recipes() {
               }`}
               key={category.idCategory}
             >
+              
               {category?.strCategory}
             </div>
+            
           ))}
+          {/* </Swiper> */}
       </div>
       {/* cards */}
       <h3>Click the following cards for required information of the dish:</h3>
@@ -79,6 +85,7 @@ export default function Recipes() {
             <RecipeCards recipe={recipe} />
           </Link>
         ))}
+        
       </div>
     </>
   );

@@ -10,7 +10,7 @@ export function getAllRecipesByCategory(category){
         })
     })
 }
-export function getAllRecipesByCategories(){
+export function getAllRecipesCategories(){
     return new Promise((resolve,reject)=>{
         axios({
             method:'get',
@@ -44,4 +44,16 @@ export function getMealBySearchTerm(searchTerm){
             resolve(res?.data?.meals)
         })
     })
+}
+
+export function getMealsByFirstName(letter){
+    return new Promise((resolve,reject)=>{
+            axios({
+                method:'get',
+                url:`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
+            }).then(res =>{
+                resolve(res?.data?.meals)
+            })
+        }
+    )
 }
