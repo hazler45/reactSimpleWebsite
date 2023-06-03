@@ -5,10 +5,13 @@
   gap: 12px;
   margin: 10px auto;
 }
+
+
 .categoriesWrapper {
   display: flex;
   padding: 20px 0;
   gap: 8px;
+  overflow: scroll;
 }
 .categoriesWrapper :hover {
   background-color: rgb(185, 6, 6);
@@ -38,7 +41,7 @@
 }
 .ingredientWrapper {
   display: grid;
-  gap: 10px;
+  
 }
 .ingredientMeasureWrapper {
   gap: 40px;

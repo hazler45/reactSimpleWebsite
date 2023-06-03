@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './RecipeCard.module.css'
 export default function RecipeCard(props) {
   return (
+    <>
     <div className={styles.recipeCardWrapper}>
         <img alt="" src={props?.recipe?.strMealThumb}></img>
         <div className={styles.contentWrapper}>
@@ -10,5 +11,7 @@ export default function RecipeCard(props) {
             <span className={styles.cardTitle}>{props?.recipe?.strMeal}</span>
         </div>
       </div>
+    </>
+    
   )
 }

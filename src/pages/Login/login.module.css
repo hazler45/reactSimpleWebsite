@@ -1,0 +1,16 @@
+.loginWrapper{
+    flex-direction: column;
+    width: 40%;
+    padding: 40px 0 ;
+    margin: auto;
+
+}
+.Wrapper{
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+.signinLink{
+    color: rgb(194, 58, 58);
+    cursor: pointer;
+}

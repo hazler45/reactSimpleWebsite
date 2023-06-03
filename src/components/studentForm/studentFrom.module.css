@@ -1,0 +1,44 @@
+option {
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.6;
+}
+input,
+select {
+  padding: 8px 4px;
+  font-size: 16px;
+}
+button {
+  background: rgb(194, 58, 58);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.wrapper{
+  padding-top: 3rem;
+  display: flex;
+  gap: 4rem;
+}
+.contactFrom{
+  width: 100%;
+}
+@media only screen and (max-width: 700px) {
+  .wrapper{
+    display: grid;
+    gap: 4rem;
+    
+  }
+  .contactImg{
+    border-radius: 12px;
+  }
+}
+.contactImg{
+  border-radius: 12px;
+  width: 50%;
+  height: auto;
+ 
+}

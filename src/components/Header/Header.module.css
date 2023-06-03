@@ -1,10 +1,14 @@
 .navLinks{
     display: flex;
     gap: 20px;
-    margin: 20px;
+    
     justify-content: center;
 }
 .links{
     text-decoration: none;
   font-size: 17px;
+}
+.linkLogin{
+  display: flex;
+  margin-left: auto;
 }

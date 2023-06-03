@@ -56,7 +56,7 @@ export default function RecipeDetail() {
           ))}
         </div>
         <div className={styles.ingredientWrapper}>
-          <h4>Ingredian</h4>
+          <h4>Measure</h4>
           {Array.from({ length: 20 }).map((item, index) => (
             <>
               {recipeDetail?.[`strMeasure${index + 1}`] ? (

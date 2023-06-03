@@ -3,7 +3,7 @@ import RecipeCards from "../../components/cards/recipeCard";
 import styles from "./Recipe.module.css";
 import {
   getAllRecipesCategories,
-  // getAllRecipesByCategory,
+  getAllRecipesByCategory,
   getMealBySearchTerm
 } from "../../apis/recipe";
 import { Link } from "react-router-dom";
@@ -19,20 +19,20 @@ export default function Recipes() {
     getRecipesByCategories();
   }, []);
 
-  // useEffect(() => {
-  //   getMealsByCategory();
-  // }, [selectedCategory]);
+  useEffect(() => {
+    getMealsByCategory();
+  }, [selectedCategory]);
 
   const getRecipesByCategories = () => {
     getAllRecipesCategories().then((res) => {
       setCategories(res);
     });
   };
-  // const getMealsByCategory = () => {
-  //   getAllRecipesByCategory(selectedCategory).then((res) => {
-  //     setMeals(res);
-  //   });
-  // };
+  const getMealsByCategory = () => {
+    getAllRecipesByCategory(selectedCategory).then((res) => {
+      setMeals(res);
+    });
+  };
   const filterByName=(name)=>{
     getMealBySearchTerm(name).then((res) => {
       setMeals(res);
