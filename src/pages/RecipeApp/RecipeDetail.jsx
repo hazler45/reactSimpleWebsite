@@ -21,6 +21,7 @@ export default function RecipeDetail() {
       setRecipeDetail(res);
     });
   };
+  
   return (
     <>
       <div className="icon-wrapper" onClick={goBack}>

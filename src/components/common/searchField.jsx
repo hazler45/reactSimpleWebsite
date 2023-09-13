@@ -6,7 +6,6 @@ export default function SearchField(props) {
     let value = searchInputRef.current.value;
     props?.onSearchInitiate(value);
   };
-
   return (
     <>
       <div className={styles.searchBar}>

@@ -41,7 +41,7 @@ export default function Recipes() {
 
   return (
     <>
-      <Header />
+      <Header/>
       {/* searchbar */}
       <SearchField 
         className={styles.searchFiled}
@@ -85,6 +85,7 @@ export default function Recipes() {
             <RecipeCards recipe={recipe} />
           </Link>
         ))}
+        
         
       </div>
     </>

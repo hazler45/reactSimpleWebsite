@@ -17,7 +17,7 @@ const firebaseConfig = {
   measurementId: "G-5Q3E61C4S3",
 };
 
-export function initializeFirebase() {
+export default function initializeFirebase() {
   const app = initializeApp(firebaseConfig);
 }
 export function loginWithGoogle() {

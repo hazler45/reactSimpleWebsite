@@ -8,8 +8,9 @@ import RecipesByLetter from './pages/RecipeApp/RecipesByLetters';
 import StudentFrom from './pages/From/From'
 import Login from './pages/Login/login'
 import React, { useEffect } from 'react';
-import { initializeFirebase } from './utils/firebaseUtils';
+import initializeFirebase from './utils/firebaseUtils';
 import { getUser } from './utils/firebaseUtils';
+import Register from './pages/Register/Register';
 const user= getUser();
 export const userContext =React.createContext({});
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route path='/recipe/by-letter' element={<RecipesByLetter/>}/>
       <Route path='/from' element={<StudentFrom/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}></Route>
       
     </Routes>
     </userContext.Provider>

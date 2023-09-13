@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./studentFrom.module.css";
 import createUser from "../../apis/users";
-import { Snackbar } from "@mui/base";
+import { Snackbar } from "@mui/material";
 import { Alert, Button, CircularProgress } from "@mui/material";
 
 function StudentFormComponent(props) {
@@ -30,33 +30,67 @@ function StudentFormComponent(props) {
   return (
     <>
       <div className={styles.wrapper}>
+        <div>
+          <h2>Contact Us</h2>
+          <span style={{ fontSize: "14px" }}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus laboriosam ipsum nisi minima aut id enim sapiente quasi
+            magnam voluptate asperiores, neque fugiat deleniti.
+          </span>
+        </div>
+
         <div className={styles.contactFrom}>
-          <h3>Contact Us</h3>
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit();
             }}
-            style={{ display: "grid", gap: "1rem" }}
+            style={{ display: "grid", gap: "2rem" }}
           >
-            <input
-              onChange={(e) => {
-                student.name = e.target.value;
-                setStudent({ ...student });
-              }}
-              required
-              value={student.name}
-              placeholder={"Name"}
-            />
-            <input
-              onChange={(e) => {
-                student.email = e.target.value;
-                setStudent({ ...student });
-              }}
-              required
-              value={student.email}
-              placeholder={"Email"}
-            />
+            <div style={{ display: "grid" }}>
+              <label htmlFor="">Name</label>
+              {/* <input
+                onChange={(e) => {
+                  student.name = e.target.value;
+                  setStudent({ ...student });
+                }}
+                required
+                value={student.name}
+                placeholder={"Name"}
+              /> */}
+              <input
+                onChange={(e) => {
+                  const updatedStudent = { ...student, name: e.target.value };
+                  setStudent(updatedStudent);
+                }}
+                required
+                value={student.name}
+                placeholder={"Name"}
+              />
+            </div>
+
+            <div style={{ display: "grid" }}>
+              <label>Email</label>
+              {/* <input
+                onChange={(e) => {
+                  student.email = e.target.value;
+                  setStudent({ ...student });
+                }}
+                required
+                value={student.email}
+                placeholder={"Email"}
+              /> */}
+              <input
+                onChange={(e) => {
+                  const updatedStudent = { ...student, name: e.target.value };
+                  setStudent(updatedStudent);
+                }}
+                required
+                value={student.email}
+                placeholder={"Email"}
+              />
+            </div>
+
             <Button
               variant="contained"
               endIcon={
@@ -85,12 +119,11 @@ function StudentFormComponent(props) {
             </Alert>
           </Snackbar>
         </div>
-      
-          <img className={styles.contactImg}
+
+        {/* <img className={styles.contactImg}
             src="https://www.thecocktaildb.com/images/media/drink/tx8ne41582475326.jpg"
             alt="contact us "
-          />
-         
+          /> */}
       </div>
     </>
   );

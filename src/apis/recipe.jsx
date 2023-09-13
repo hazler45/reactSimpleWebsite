@@ -21,6 +21,7 @@ export function getAllRecipesCategories(){
         })
     })
 }
+
 export function getMealDetail(mealId){
     return new Promise((resolve,reject)=>{
         axios({
